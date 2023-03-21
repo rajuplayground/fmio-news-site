@@ -1,0 +1,332 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: fallback;
+  src: url("/fonts/inter.woff2") format("woff2");
+}
+
+:root {
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --font-size-300: 0.9375rem;
+  --font-size-400: 1.125rem;
+  --font-size-500: 1.25rem;
+  --font-size-600: 2rem;
+  --font-size-700: 2.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+
+  --clr-primary-orange-hsl-400: 35 77% 62%;
+  --clr-primary-red-hsl-400: 5 85% 63%;
+
+  --clr-off-hsl-white: 36 100% 99%;
+  --clr-grayish-hsl-blue: 233 8% 79%;
+  --clr-dark-hsl-grayish-blue: 236 13% 42%;
+  --clr-very-hsl-dark-blue: 240 100% 5%;
+
+  --clr-primary-orange-400: hsl(var(--clr-primary-orange-hsl-400));
+  --clr-primary-red-400: hsl(var(--clr-primary-red-hsl-400));
+
+  --clr-off-white: hsl(var(--clr-off-hsl-white));
+  --clr-grayish-blue: hsl(var(--clr-grayish-hsl-blue));
+  --clr-dark-grayish-blue: hsl(var(--clr-dark-hsl-grayish-blue));
+  --clr-very-dark-blue: hsl(var(--clr-very-hsl-dark-blue));
+
+  color: var(--clr-dark-grayish-blue);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-primary-2 {
+  --bg-color: var(--clr-primary-red-400);
+  --text-color: white;
+}
+
+.btn {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--font-size-300);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--bg-color, black);
+  color: var(--text-color, white);
+  width: fit-content;
+  padding: 12px 32px;
+  letter-spacing: 3px;
+}
+
+.link:hover {
+  color: var(--clr-primary-orange-400);
+}
+
+.max-width-wrapper {
+  --max-padding: 16px;
+  max-width: calc(1110px + var(--max-padding) * 2);
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: var(--max-padding);
+}
+
+.section-title {
+  font-size: var(--font-size-600);
+  color: var(--section-heading-color, white);
+}
+
+.sub-title {
+  font-size: var(--font-size-500);
+  color: var(--sub-heading-color, white);
+}
+.spacer {
+  height: var(--spacer, 16px);
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 28px 32px;
+}
+
+@media (min-width: 50rem) {
+  .main-header {
+    padding-block: 60px;
+  }
+}
+.logo {
+  width: 46px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.desktop-nav-list {
+  display: none;
+}
+.burger-menu {
+  display: revert;
+}
+
+@media (min-width: 35rem) {
+  .desktop-nav-list {
+    display: flex;
+    gap: clamp(20px, 5vw, 40px);
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .burger-menu {
+    display: none;
+  }
+  .logo {
+    width: 65px;
+    height: 40px;
+  }
+}
+
+.main-content {
+  --spacer: 46px;
+  padding-bottom: 80px;
+}
+
+.main-stories {
+  display: grid;
+  gap: 64px;
+}
+
+@media (min-width: 43rem) {
+  .main-stories {
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+  }
+}
+
+.featured-story {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.featured-img {
+  max-height: 300px;
+}
+
+.featured-img img {
+  min-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.featured-title {
+  font-size: var(--font-size-700);
+  color: var(--clr-very-dark-blue);
+  font-weight: var(--font-weight-black);
+  line-height: 112%;
+  overflow: hidden;
+}
+.featured-content {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.featured-matter {
+  margin-bottom: 30px;
+}
+@media (min-width: 43rem) {
+  .featured-img {
+    max-height: 260px;
+  }
+  .featured-content {
+    flex-direction: row;
+    gap: 50px;
+  }
+}
+.new-stories {
+  --section-heading-color: var(--clr-primary-orange-400);
+  --sub-heading-color: var(--clr-off-white);
+  background: var(--clr-very-dark-blue);
+  color: var(--clr-grayish-blue);
+  padding: 24px 30px;
+}
+
+.new-stories-list {
+  padding-top: 10px;
+}
+
+.new-story-wrapper:not(:last-of-type) {
+  padding-block: 16px;
+  border-bottom: 1px solid var(--clr-dark-grayish-blue);
+}
+
+.new-story-content {
+  padding-top: 16px;
+}
+
+.main-articles {
+  --sub-heading-color: var(--clr-very-dark-blue);
+}
+
+.articles-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 43rem) {
+  .articles-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+.article-wrapper {
+  display: flex;
+  gap: 25px;
+}
+
+.article-img {
+  flex: 0 0 124px;
+}
+
+.article-img img {
+  object-fit: cover;
+  min-height: 100%;
+}
+
+.article-number {
+  font-size: var(--font-size-600);
+  font-weight: var(--font-weight-bold);
+  color: var(--clr-grayish-blue);
+}
+.article-matter {
+  margin-top: 14px;
+  margin-bottom: 5px;
+}
