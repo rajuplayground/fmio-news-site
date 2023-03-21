@@ -21,8 +21,22 @@
                     <li><a class="link" href="">Categories</a></li>
                 </ul>
             </nav>
-            <nav class="mobile-nav"></nav>
-            <div class="burger-menu"><img src="/images/icon-menu.svg" alt=""></div>
+            <nav id="mobile-nav" class="mobile-nav" data-menu="close">
+                <div class="mobile-nav-overlay">
+                    <div class="mobile-nav-wrapper">
+                        <button id="menu-close-btn" class="icon-btn nav-close"><img src="/images/icon-menu-close.svg"
+                                alt=""></button>
+                        <ul class="list mobile-nav-list">
+                            <li><a class="link" href="">Home</a></li>
+                            <li><a class="link" href="">New</a></li>
+                            <li><a class="link" href="">Popular</a></li>
+                            <li><a class="link" href="">Trending</a></li>
+                            <li><a class="link" href="">Categories</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <button id="burger-menu" class="icon-btn burger-menu"><img src="/images/icon-menu.svg" alt=""></button>
         </div>
     </header>
     <main class="main-content">

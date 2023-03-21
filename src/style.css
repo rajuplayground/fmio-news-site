@@ -119,6 +119,10 @@ h6 {
   color: inherit;
 }
 
+.link:hover {
+  color: var(--clr-primary-orange-400);
+}
+
 .list {
   list-style: none;
   margin: 0;
@@ -141,10 +145,6 @@ h6 {
   width: fit-content;
   padding: 12px 32px;
   letter-spacing: 3px;
-}
-
-.link:hover {
-  color: var(--clr-primary-orange-400);
 }
 
 .max-width-wrapper {
@@ -186,14 +186,64 @@ h6 {
   flex-shrink: 0;
 }
 
-.desktop-nav-list {
+.desktop-nav {
   display: none;
 }
+.icon-btn {
+  border: none;
+  background: none;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
 .burger-menu {
-  display: revert;
+  display: block;
+}
+
+.mobile-nav[data-menu="close"] {
+  display: none;
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: hsl(var(--clr-dark-hsl-grayish-blue) / 0.5);
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.mobile-nav-wrapper {
+  background-color: var(--clr-off-white);
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 300px;
+  padding-top: 28px;
+  padding-right: 20px;
+  padding-left: 25px;
+}
+
+.nav-close {
+  align-self: flex-end;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mobile-nav-list .link {
+  font-weight: var(--font-weight-bold);
 }
 
 @media (min-width: 35rem) {
+  .desktop-nav {
+    display: revert;
+  }
   .desktop-nav-list {
     display: flex;
     gap: clamp(20px, 5vw, 40px);
